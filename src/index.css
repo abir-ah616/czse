@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #00a8ff;
+  --secondary: #7201b1;
+  --accent: #ff3778;
+  --success: #00ff9d;
+  --warning: #ffba00;
+  --error: #ff4757;
+  --background: #030a20;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Fonts */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-russo {
+  font-family: 'Russo One', sans-serif;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(0, 20, 40, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-darker {
+  background: rgba(0, 0, 20, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-lighter {
+  background: rgba(30, 60, 100, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Table Styles */
+.points-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.points-table th,
+.points-table td {
+  position: relative;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-row {
+  transition: all 0.2s ease;
+}
+
+.team-row:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Title Effects */
+.hero-title {
+  text-shadow: 0 0 20px var(--primary), 0 0 30px rgba(0, 168, 255, 0.5);
+  letter-spacing: 2px;
+}
+
+.title-glow {
+  text-shadow: 0 0 10px #fff, 0 0 20px var(--primary), 0 0 30px var(--primary);
+}
+
+/* Custom Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px 0px var(--primary), 0 0 20px 5px rgba(0, 168, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px 2px var(--primary), 0 0 30px 10px rgba(0, 168, 255, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+/* Utility classes */
+.text-gradient {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.border-gradient {
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to right, var(--primary), var(--accent)) 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Screenshot area styles */
+#screenshot-area {
+  position: relative;
+  background-image: url('https://files.catbox.moe/yt2t9h.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Rank gradients */
+.rank-1 {
+  background: linear-gradient(to right, #FFD700, #FFA500);
+}
+
+.rank-2 {
+  background: linear-gradient(to right, #C0C0C0, #A9A9A9);
+}
+
+.rank-3 {
+  background: linear-gradient(to right, #CD7F32, #8B4513);
+}
+
+.slot-number {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffe08a;
+  text-shadow: 0 0 5px rgba(255, 224, 138, 0.7);
+}
+
+.team-name {
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.tournament-header {
+  position: relative;
+  z-index: 1;
+}
+
+.tournament-header:before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
